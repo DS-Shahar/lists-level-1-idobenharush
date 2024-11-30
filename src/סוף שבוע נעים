@@ -1,0 +1,37 @@
+public class Main {
+
+    public static void main(String[] args) {
+        // TODO Auto-generated method stub
+        Node<Integer> firstNode = new Node<>(7);
+        Node<Integer> secondNode = new Node<>(2);
+        Node<Integer> thirdNode = new Node<>(8);
+
+        firstNode.setNext(secondNode);
+        secondNode.setNext(thirdNode);
+        
+        System.out.println(firstNode);
+        
+        deleteNode(firstNode, 2);
+        
+        System.out.println(firstNode);
+    }
+    
+    public static Node<Integer> deleteNode(Node<Integer> head, int value) {
+        Node<Integer> dummyNode = new Node<>(-1, head);
+        
+        while (dummyNode.hasNext()) {
+            Node<Integer> temp;
+            
+            if (dummyNode.getNext().getValue() == value) {
+                temp = dummyNode.getNext();
+                dummyNode.setNext(dummyNode.getNext().getNext());
+                temp.setNext(null);
+                return head.getNext();
+            }
+            
+            dummyNode = dummyNode.getNext();
+        }
+        
+        return dummyNode.getNext();
+    }
+}

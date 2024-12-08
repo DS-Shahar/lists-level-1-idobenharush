@@ -122,13 +122,13 @@ public class Main {
     	if (getLength(L1) != getLength(L2)) { 
     		return false;
     	}
-    		for(int i =0; i<getLength(L1);i++) {
+    	for(int i =0; i<getLength(L1);i++) {
     			if(L1.getValue()==L2.getValue()) {
     				 L1 = L1.getNext(); 
     				 L2 = L2.getNext(); 
-    			}
-    			break;
-    		}
-    		return true;
+    			} else
+    			    return false;
     	}
+    	return true;
+    }
 }

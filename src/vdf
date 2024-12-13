@@ -1,22 +1,23 @@
-;
+package ht;
 import java.util.*;
-
 public class Main {
     public static Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) {
-        /*int[] arr = {1, 2, 3, 4, 5, 6, 7};
+        int[] arr = {1, 2, 3, 4, 5, 6, 7};
         Node<Integer> head = makeList(arr);
 
-        System.out.println(inList(head, 8));
+ /*       System.out.println(inList(head, 8));
         System.out.println(head);
         head = delIdx(head, 3);
 
-        System.out.println("List after deletion: " + head);*/
+        System.out.println("List after deletion: " + head);
         int[] arr1 = {10, 20, 30, 40, 50};
-        Node<Integer> L1 = makeList(arr1);
-        Node<Integer> L2 = makeList(arr1);
-        equality(L1,L2);
+        Node<Integer> L1 = makeList(arr);
+        Node<Integer> L2 = makeList(arr1);*/
+        System.out.println();
+        System.out.println(equality(L1,L2));
+        ex9(L1,L2);
     }
 
     public static Node<Integer> makeList(int[] arr) { // ex1
@@ -109,7 +110,7 @@ public class Main {
         }
         return head;
     }
-    public static int getLength(Node<Integer> head) {
+    public static int getLength(Node<Integer> head) { //סתם פעולה לגילוי אורך של מערך
         int length = 0;
         Node<Integer> current = head;
         while (current != null) {
@@ -118,17 +119,11 @@ public class Main {
         }
         return length;
     }
-    public static boolean equality(Node<Integer> L1, Node<Integer> L2) { //ex8
-    	if (getLength(L1) != getLength(L2)) { 
-    		return false;
-    	}
-    	for(int i =0; i<getLength(L1);i++) {
-    			if(L1.getValue()==L2.getValue()) {
-    				 L1 = L1.getNext(); 
-    				 L2 = L2.getNext(); 
-    			} else
-    			    return false;
-    	}
-    	return true;
-    }
-}
+    public static boolean equality(Node<Integer> L1, Node<Integer> L2) { // ex8 
+        if (L1 == null && L2 == null) {
+            return true;
+        }
+        
+        if (L1 == null || L2 == null) {
+            return false;
+        }

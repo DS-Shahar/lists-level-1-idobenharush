@@ -1,0 +1,18 @@
+public static Node<Integer> ex10(Node<Integer> h1, Node<Integer> h2) {
+    Node<Integer> ht = new Node<Integer>(null);
+    Node<Integer> c3 = ht;
+    Node<Integer> p = h1;
+    while (p != null) {
+        Node<Integer> h = h2;
+        while (h != null) {
+            if (p.getValue().equals(h.getValue())) {
+                Node<Integer> c = new Node<Integer>(p.getValue());
+                c3.setNext(c);
+                c3 = c;
+            }
+            h = h.getNext();
+        }
+        p = p.getNext();
+    }
+    return ht.getNext();
+}

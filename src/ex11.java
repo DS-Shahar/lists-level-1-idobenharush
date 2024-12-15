@@ -20,7 +20,7 @@ public static Node<Integer> removeCommon2(Node<Integer> listA, Node<Integer> lis
     while (current.hasNext()) {
         int a = current.getNext().getValue();
         pB = listB;
-        while (pB != null && !pB.getValue().equals(a)))
+        while (pB != null && !pB.getValue().equals(a)))  {
             pB = pB.getNext();
         }
         if (pB != null)

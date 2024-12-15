@@ -1,12 +1,15 @@
-public static Node<Integer> ex11(Node<Integer> list1, Node<Integer> list2) {
-		    Node<Integer> p = new Node<>(0, list1);
-		    Node<Integer> first = p;
-		    while (p.hasNext()) {
-		      int num = p.getNext().getValue();
-		      if (isNumIn(list2, num))
-		        p.setNext(p.getNext().getNext());
-		      else 
-		        p = p.getNext();
-		    }
-		    return first.getNext();
-		  }
+public static Node<Integer> removeCommon(Node<Integer> listA, Node<Integer> listB) {
+    Node<Integer> current = new Node<>(0, listA);
+    Node<Integer> head = current;
+    
+    while (current.hasNext()) {
+        int value = current.getNext().getValue();
+        if (isNumIn(listB, value)) {
+            current.setNext(current.getNext().getNext());
+        } else {
+            current = current.getNext();
+        }
+    }
+    
+    return head.getNext();
+}
